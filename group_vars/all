@@ -1,0 +1,16 @@
+---
+city:
+  mia:
+    ntp_servers:
+     - 10.50.100.10
+     - 10.50.100.11
+     - 10.50.101.10
+     - 10.50.101.11
+    syslog_server: 10.50.102.10
+    of_controller: 172.16.5.5
+  nyc:
+    ntp_servers:
+     - 10.90.90.10
+     - 10.90.90.11
+    syslog_server: 10.90.95.15
+    of_controller: 172.16.10.10

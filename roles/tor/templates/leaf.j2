@@ -1,0 +1,44 @@
+#Config for {{ item.hostname }}
+hostname {{ item.hostname|upper }}
+#
+interface loopback0
+  ip address {{ item.mgmt_ip }} 255.255.255.255
+#
+{% for uplink in item.uplinks %}
+interface {{ uplink.tor_port }}
+ description {{ uplink.spine_port }}.{{ uplink.spine_switch|upper }}
+ port link-mode route
+ ip address {{ uplink.tor_ip }} 255.255.255.252
+#
+{% endfor %}
+{% for vlan in item.vlans %}
+vlan {{ vlan.number }}
+ name {{ vlan.name }}
+#
+{% endfor %}
+{% for vlan in item.vlans %}
+interface vlan{{ vlan.number }}
+ ip address {{ vlan.ip }} {{ vlan.subnet }}
+ name {{ vlan.name }}
+#
+{% endfor %}
+#
+ospf 1000
+ silent-interface all
+ {% for uplink in item.uplinks %}
+ undo silent-interface {{ uplink.tor_port }}
+ {% endfor %}
+ area 0.0.0.0
+ {% for vlan in item.vlans %}
+  network {{ vlan.ip }} 0.0.0.0
+ {% endfor %}
+#
+ntp-service enable
+{% for server in city[item.city].ntp_servers %}
+ntp-service unicast-server {{ server }}
+{% endfor %}
+#
+info-center loghost {{ city[item.city].syslog_server }}
+#
+{% block openflow %}
+{% endblock %}

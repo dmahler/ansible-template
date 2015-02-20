@@ -1,0 +1,7 @@
+---
+- name: Make Configs!
+  gather_facts: no
+  hosts: localhost
+
+  roles:
+   - tor

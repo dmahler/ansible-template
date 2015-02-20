@@ -1,0 +1,114 @@
+---
+switches:
+  - hostname: leaf01m
+    profile: leaf_of
+    city: mia
+    mgmt_ip: 10.10.0.5
+    vlans:
+      - number: 500
+        name: webnet
+        ip: 10.30.10.1
+        subnet: 255.255.255.0
+      - number: 600
+        name: swift
+        ip: 10.30.20.1
+        subnet: 255.255.255.0
+    uplinks:
+      - tor_port: Ten1/0/1
+        tor_ip: 10.50.50.1
+        spine_switch: spine01m
+        spine_port: Ten1/9/1
+      - tor_port: Ten1/0/2
+        tor_ip: 10.50.50.5
+        spine_switch: spine02m
+        spine_port: Ten1/9/1
+      - tor_port: Ten1/0/3
+        tor_ip: 10.50.50.9
+        spine_switch: spine03m
+        spine_port: Ten1/9/1
+      - tor_port: Ten1/0/4
+        tor_ip: 10.50.50.13
+        spine_switch: spine04m
+        spine_port: Ten1/9/1
+
+  - hostname: leaf02m
+    profile: leaf
+    city: mia
+    mgmt_ip: 10.10.0.6
+    vlans:
+      - number: 501
+        name: app1
+        ip: 10.35.35.1
+        subnet: 255.255.255.0
+    uplinks:
+      - tor_port: Ten1/0/1
+        tor_ip: 10.50.51.1
+        spine_switch: spine01m
+        spine_port: Ten1/9/2
+      - tor_port: Ten1/0/2
+        tor_ip: 10.50.51.5
+        spine_switch: spine02m
+        spine_port: Ten1/9/2
+      - tor_port: Ten1/0/3
+        tor_ip: 10.50.51.9
+        spine_switch: spine03m
+        spine_port: Ten1/9/2
+      - tor_port: Ten1/0/4
+        tor_ip: 10.50.51.13
+        spine_switch: spine04m
+        spine_port: Ten1/9/2
+
+
+  - hostname: leaf03m
+    profile: leaf
+    city: mia
+    mgmt_ip: 10.10.0.7
+    vlans:
+      - number: 502
+        name: app2
+        ip: 10.45.45.1
+        subnet: 255.255.255.0
+    uplinks:
+      - tor_port: Ten1/0/1
+        tor_ip: 10.50.52.1
+        spine_switch: spine01m
+        spine_port: Ten1/9/3
+      - tor_port: Ten1/0/2
+        tor_ip: 10.50.52.5
+        spine_switch: spine02m
+        spine_port: Ten1/9/3
+      - tor_port: Ten1/0/3
+        tor_ip: 10.50.52.9
+        spine_switch: spine03m
+        spine_port: Ten1/9/3
+      - tor_port: Ten1/0/4
+        tor_ip: 10.50.52.13
+        spine_switch: spine04m
+        spine_port: Ten1/9/3
+
+  - hostname: leaf04m
+    profile: leaf
+    city: mia
+    mgmt_ip: 10.10.0.8
+    vlans:
+      - number: 503
+        name: app3
+        ip: 10.55.55.1
+        subnet: 255.255.255.0
+    uplinks:
+      - tor_port: Ten1/0/1
+        tor_ip: 10.50.53.1
+        spine_switch: spine01m
+        spine_port: Ten1/9/4
+      - tor_port: Ten1/0/2
+        tor_ip: 10.50.53.5
+        spine_switch: spine02m
+        spine_port: Ten1/9/4
+      - tor_port: Ten1/0/3
+        tor_ip: 10.50.53.9
+        spine_switch: spine03m
+        spine_port: Ten1/9/4
+      - tor_port: Ten1/0/4
+        tor_ip: 10.50.53.13
+        spine_switch: spine04m
+        spine_port: Ten1/9/4
