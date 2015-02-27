@@ -1,9 +1,0 @@
-{% extends "leaf.j2" %}
-
-{% block openflow %}
-vlan 4000
-openflow instance 1
-classification vlan 4000
-controller 1 address ip {{ city[item.city].of_controller }}
-active instance
-{% endblock %}

@@ -40,5 +40,12 @@ ntp-service unicast-server {{ server }}
 #
 info-center loghost {{ city[item.city].syslog_server }}
 #
-{% block openflow %}
-{% endblock %}
+{% if item.city == "mia" %}
+header legal &
+bienvenido a miami
+&
+{% else %}
+header legal &
+Unathorized use prohibited
+&
+{% endif %}

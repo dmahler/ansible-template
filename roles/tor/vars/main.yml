@@ -1,7 +1,7 @@
 ---
 switches:
   - hostname: leaf01m
-    profile: leaf_of
+    profile: leaf
     city: mia
     mgmt_ip: 10.10.0.5
     vlans:
