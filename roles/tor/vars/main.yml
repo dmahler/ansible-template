@@ -5,12 +5,12 @@ switches:
     city: mia
     mgmt_ip: 10.10.0.5
     vlans:
-      - number: 500
-        name: webnet
+      - number: 501
+        name: compute1
         ip: 10.30.10.1
         subnet: 255.255.255.0
-      - number: 600
-        name: swift
+      - number: 601
+        name: swift1
         ip: 10.30.20.1
         subnet: 255.255.255.0
     uplinks:
@@ -36,8 +36,8 @@ switches:
     city: mia
     mgmt_ip: 10.10.0.6
     vlans:
-      - number: 501
-        name: app1
+      - number: 502
+        name: compute2
         ip: 10.35.35.1
         subnet: 255.255.255.0
     uplinks:
@@ -64,8 +64,8 @@ switches:
     city: mia
     mgmt_ip: 10.10.0.7
     vlans:
-      - number: 502
-        name: app2
+      - number: 503
+        name: compute3
         ip: 10.45.45.1
         subnet: 255.255.255.0
     uplinks:
@@ -91,8 +91,8 @@ switches:
     city: mia
     mgmt_ip: 10.10.0.8
     vlans:
-      - number: 503
-        name: app3
+      - number: 504
+        name: compute4
         ip: 10.55.55.1
         subnet: 255.255.255.0
     uplinks:
