@@ -2,4 +2,4 @@
 - name: Generate configuration files
   template: src={{ item.profile }}.j2 dest=/tmp/{{ item.hostname }}.cfg
   with_items: 
-   switches
+   {{ switches }}
